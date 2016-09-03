@@ -44,8 +44,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			    </ul>
 			</div>
 			<div class="search_box">
-			    <form action="result.php" method="post">
-			    <input type="text" value="Search" name="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+			    <form action="admin/news/db.php" method="post">
+			    <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
 			    <input type="submit" value="" name="search_news">
 			    </form>
 			</div>
@@ -59,7 +59,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<?php
             include "admin/news/db.php";
             $insertNews = new Database('localhost','root','','blog');   
-            $newQuery = $insertNews->select_news('news');
+            $newQuery = $insertNews->search_engine($_POST['search_news'],$_POST['Search']);
             
             
             while($row = mysqli_fetch_assoc($newQuery)){

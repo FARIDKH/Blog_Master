@@ -92,6 +92,20 @@
             
             return $query;
         }
+        public function search_engine($button,$input){
+            if(isset($button)){
+                
+                $inserted_news = $input;
+                
+                $sql = "SELECT * FROM news WHERE title LIKE '%$inserted_news%'";
+                $query = mysqli_query($this->conn,$sql);
+                
+                
+                
+                
+                return $query;
+            }
+        }
 
     }
     
