@@ -73,6 +73,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <p><?= substr($row['text'],0,200)."..." ?></p>
                         <a href="single.php?id=<?= $row['id'] ?>">Continue reading >>></a>
                     </div>
+                    <div class="alert alert-success pull-right"><?= $row['view_count'] ?> Views</div>
                     <div class="clear"></div>
                 </div> <?php
             }

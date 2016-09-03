@@ -93,16 +93,13 @@
             return $query;
         }
         public function search_engine($button,$input){
+            $var = false;
             if(isset($button)){
                 
                 $inserted_news = $input;
                 
-                $sql = "SELECT * FROM news WHERE title LIKE '%$inserted_news%'";
+                $sql = "SELECT * FROM news WHERE title LIKE '%$inserted_news%' ORDER BY id DESC";
                 $query = mysqli_query($this->conn,$sql);
-                
-                
-                
-                
                 return $query;
             }
         }
